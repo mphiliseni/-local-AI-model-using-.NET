@@ -29,3 +29,4 @@
 /Users/mphilisenimhlongo/Project/-local-AI-model-using-.NET/LocalAi/obj/Debug/net9.0/LocalAi.pdb
 /Users/mphilisenimhlongo/Project/-local-AI-model-using-.NET/LocalAi/obj/Debug/net9.0/LocalAi.genruntimeconfig.cache
 /Users/mphilisenimhlongo/Project/-local-AI-model-using-.NET/LocalAi/obj/Debug/net9.0/ref/LocalAi.dll
+/Users/mphilisenimhlongo/Project/-local-AI-model-using-.NET/LocalAi/obj/Debug/net9.0/LocalAi.sourcelink.json
