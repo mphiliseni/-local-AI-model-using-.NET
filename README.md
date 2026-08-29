@@ -17,10 +17,9 @@ LocalAi is a tiny, approachable .NET console app that demonstrates running a loc
 	dotnet run
 	```
 
-## What you'll find
+## Demo
+<img width="1026" height="341" alt="Screenshot 2026-08-29 at 15 51 34" src="https://github.com/user-attachments/assets/ad7e42c7-2d67-44c6-a148-0a2d2da5b6af" />
 
-- A minimal `.csproj` and a small `Program.cs` that show how the app is wired up.
-- Sample config and runtime files in `bin/` and `obj/` after building.
 
 ## Contributing
 
