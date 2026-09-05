@@ -35,7 +35,8 @@ dotnet run
 
 You can add a screenshot for the web UI to the `images/` folder and reference it below. By convention place the screenshot at `images/chat-screenshot.png`.
 
-![Chat screenshot](images/chat-screenshot.png)
+<img width="1437" height="779" alt="image" src="https://github.com/user-attachments/assets/526e75ad-3b76-4216-9ea9-89d60eff25b9" />
+
 
 
 ## Contributing
