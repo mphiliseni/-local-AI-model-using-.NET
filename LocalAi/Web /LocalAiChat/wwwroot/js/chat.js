@@ -58,12 +58,17 @@ async function sendMessage() {
                             assistantBubble.innerText = '';
                         }
                         assistantBubble.innerText += text;
+                        // always keep the chat scrolled to the latest content
+                        const chatEl = document.getElementById('chatWindow');
+                        if (chatEl) chatEl.scrollTop = chatEl.scrollHeight;
                     } catch (e) {
                         if (assistantBubble.classList.contains('typing-dots')) {
                             assistantBubble.classList.remove('typing-dots');
                             assistantBubble.innerText = '';
                         }
                         assistantBubble.innerText += raw;
+                        const chatEl = document.getElementById('chatWindow');
+                        if (chatEl) chatEl.scrollTop = chatEl.scrollHeight;
                     }
                 }
                 else if (line.startsWith('event:') && line.includes('done')) {

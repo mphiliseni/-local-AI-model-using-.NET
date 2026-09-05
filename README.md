@@ -37,7 +37,7 @@ Screenshot for the web UI
 
 <img width="1437" height="779" alt="image" src="https://github.com/user-attachments/assets/526e75ad-3b76-4216-9ea9-89d60eff25b9" />
 
-
+<!-- merged changes: preserved Web Version and screenshot -->
 
 ## Contributing
 

@@ -141,7 +141,7 @@ body {
     max-width: 100%;
     box-shadow: none;
     /* internal scroll to keep bubble size stable */
-    max-height: 220px;
+    max-height: 280px;
     overflow: auto;
     white-space: pre-wrap;
     word-break: break-word;
