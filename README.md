@@ -33,7 +33,7 @@ dotnet run
 
 - Open the app at: `http://localhost:5056` (default development URL, may vary)
 
-You can add a screenshot for the web UI to the `images/` folder and reference it below. By convention place the screenshot at `images/chat-screenshot.png`.
+Screenshot for the web UI 
 
 <img width="1437" height="779" alt="image" src="https://github.com/user-attachments/assets/526e75ad-3b76-4216-9ea9-89d60eff25b9" />
 
