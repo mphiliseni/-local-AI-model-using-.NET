@@ -1,0 +1,106 @@
+# .gitignore for a .NET project with common IDEs and OS
+
+# Build artifacts
+**/bin/
+**/obj/
+**/publish/
+*.ilk
+*.pdb
+*.exe
+*.dll
+*.app
+*.apk
+*.class
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.csproj.user
+
+# Rider
+.idea/
+*.sln.iml
+
+# Visual Studio Code
+.vscode/
+
+# NuGet
+*.nupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Dotnet local settings
+*.runtimeconfig.dev.json
+*.dotCover
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# User-specific files
+*.log
+*.env
+.env.*
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# npm
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# dotnet watch
+.dotnet_watch
+
+# Secrets and local overrides
+appsettings.Development.json
+appsettings.*.Local.json
+secrets.json
+
+# Database
+*.mdf
+*.ldf
+
+# JetBrains
+.idea/
+*.iml
+
+# Generated files
+*.g.cs
+*_i.c
+*_p.c
+
+# Temporary files
+*.tmp
+*.temp
+
+# Test results
+TestResults/
+
+# Azure pipelines
+.azure-pipelines.yml
+
+# Local publish folder
+PublishOutput/
+
+# Logs
+*.log
+
+# Rider caches
+.idea/
+
+# VS Code workspace storage
+.vscode/*storage*
