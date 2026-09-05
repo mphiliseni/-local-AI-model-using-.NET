@@ -1,0 +1,46 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@* <div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div> *@
+
+<div class="chat-container">
+        <div id="chatWindow" class="chat-window">
+            <div id="emptyState">
+                <h2>Chat is Empty</h2>
+                <p>AI assistant is ready to answer your questions.</p>
+                <div class="quick-prompts">
+                    <button class="prompt" onclick="sendPrompt('Tell me a joke')">
+                        <div class="prompt-title">Tell me a joke</div>
+                        <div class="prompt-desc">Take a break and enjoy a quick laugh</div>
+                    </button>
+                    <button class="prompt" onclick="sendPrompt('Summarize text')">
+                        <div class="prompt-title">Summarize text</div>
+                        <div class="prompt-desc">Extract a quick summary (main ideas)</div>
+                    </button>
+                    <button class="prompt" onclick="sendPrompt('Write an email')">
+                        <div class="prompt-title">Write an email</div>
+                        <div class="prompt-desc">Make your text look and sound professional</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="typingIndicator" class="typing">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    <div class="input-area">
+        <div class="input-wrapper">
+            <textarea id="messageBox" rows="4" placeholder="Ask AI Assistant..."></textarea>
+            <button class="send-btn" onclick="sendMessage()">↗</button>
+        </div>
+    </div>
+</div>
