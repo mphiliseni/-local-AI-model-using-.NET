@@ -1,3 +1,14 @@
+const messageBox = document.getElementById("messageBox");
+
+if (messageBox) {
+    messageBox.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" && !event.shiftKey) {
+            event.preventDefault();
+            sendMessage();
+        }
+    });
+}
+
 async function sendMessage() {
 
     const input =

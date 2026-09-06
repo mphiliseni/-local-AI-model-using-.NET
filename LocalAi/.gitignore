@@ -34,6 +34,7 @@ project.lock.json
 project.fragment.lock.json
 artifacts/
 
+
 # Dotnet local settings
 *.runtimeconfig.dev.json
 *.dotCover
@@ -104,3 +105,6 @@ PublishOutput/
 
 # VS Code workspace storage
 .vscode/*storage*
+
+# adminlte assets
+**/wwwroot/adminlte/
