@@ -1,51 +1,70 @@
-const messageBox = document.getElementById("messageBox");
+// Helpers that query the DOM lazily so the script can be loaded safely
+function getMessageBox() {
+    return document.getElementById("messageBox");
+}
 
-if (messageBox) {
-    messageBox.addEventListener("keydown", (event) => {
-        if (event.key === "Enter" && !event.shiftKey) {
+function autoResizeTextarea(el, maxHeight = 400) {
+    if (!el) return;
+    el.style.height = 'auto';
+    const h = Math.min(el.scrollHeight, maxHeight);
+    el.style.height = h + 'px';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const messageBox = getMessageBox();
+    if (!messageBox) return;
+
+    // send on Enter (unless shift is held) and prevent accidental empty whitespace-only messages
+    messageBox.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' && !event.shiftKey) {
             event.preventDefault();
             sendMessage();
         }
     });
-}
+
+    // auto-resize as user types
+    messageBox.addEventListener('input', (e) => autoResizeTextarea(e.target));
+
+    // initial size
+    autoResizeTextarea(messageBox);
+});
 
 async function sendMessage() {
+    const input = getMessageBox();
+    if (!input) return;
 
-    const input =
-        document.getElementById("messageBox");
+    // trim to avoid sending blanks
+    const message = input.value.trim();
+    if (!message) return;
 
-    const message = input.value;
+    document.getElementById('emptyState')?.remove();
 
-    if (!message)
-        return;
+    addMessage(message, 'user');
 
-    document
-        .getElementById("emptyState")
-        ?.remove();
-
-    addMessage(message, "user");
-
-    input.value = "";
+    // clear input and reset height
+    input.value = '';
+    autoResizeTextarea(input);
+    input.focus();
 
     // create assistant bubble and show typing inside it
-    const assistantBubble = addMessage("", "assistant");
+    const assistantBubble = addMessage('', 'assistant');
     showTyping(assistantBubble);
 
-    const res = await fetch("/Api/Chat/stream", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+    const res = await fetch('/Api/Chat/stream', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: message })
     });
 
     if (!res.ok || !res.body) {
         hideTyping(assistantBubble);
-        assistantBubble.innerText = "Error: unable to contact AI";
+        assistantBubble.innerText = 'Error: unable to contact AI';
         return;
     }
 
     const reader = res.body.getReader();
     const decoder = new TextDecoder();
-    let buffer = "";
+    let buffer = '';
 
     while (true) {
         const { value, done } = await reader.read();
@@ -63,13 +82,11 @@ async function sendMessage() {
                     const raw = line.slice(5).trim();
                     try {
                         const text = JSON.parse(raw);
-                        // remove typing dots on first chunk
                         if (assistantBubble.classList.contains('typing-dots')) {
                             assistantBubble.classList.remove('typing-dots');
                             assistantBubble.innerText = '';
                         }
                         assistantBubble.innerText += text;
-                        // always keep the chat scrolled to the latest content
                         const chatEl = document.getElementById('chatWindow');
                         if (chatEl) chatEl.scrollTop = chatEl.scrollHeight;
                     } catch (e) {

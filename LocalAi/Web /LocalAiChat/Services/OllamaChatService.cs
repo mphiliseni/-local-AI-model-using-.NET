@@ -42,10 +42,6 @@ namespace LocalAiChat.Services
             {
                 yield return item.Text;
             }
-
-            // Optionally, accumulate final response into history
-            // (consumer can assemble the pieces). For now we add a placeholder.
-            // Note: reconstructing full response is left to caller if needed.
         }
     }
 }
