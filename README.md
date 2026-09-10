@@ -137,6 +137,10 @@ This allows the .NET app to send prompts to a local model and stream responses b
 <img width="1440" height="783" alt="Screenshot 2026-09-06 at 11 24 30" src="https://github.com/user-attachments/assets/e51aebd1-c490-4048-b11d-b81779f44af6" />
 
 
+## Demo
+<img width="1438" height="765" alt="Screenshot 2026-09-10 at 19 04 17" src="https://github.com/user-attachments/assets/4d07679b-5fb0-45d7-91d1-bff3f255f6be" />
+
+
 ## Notes
 
 - This project is intended for local experimentation and learning.
