@@ -140,6 +140,10 @@ This allows the .NET app to send prompts to a local model and stream responses b
 ## Demo
 <img width="1438" height="765" alt="Screenshot 2026-09-10 at 19 04 17" src="https://github.com/user-attachments/assets/4d07679b-5fb0-45d7-91d1-bff3f255f6be" />
 
+## System logic 
+<img width="5490" height="2808" alt="logic" src="https://github.com/user-attachments/assets/19bd8ab4-8e9c-416e-969b-0ad997347e36" />
+
+
 
 ## Notes
 
