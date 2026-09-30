@@ -4,6 +4,25 @@ body {
 }
 
 .chat-container {
+background: transparent;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1050;
+    background: #fff;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1050;
+    background: #fff;
+}
+
+
+.chat-container {
     width: 900px;
     height: auto; /* allow page to scroll instead of inside card */
     margin: auto;
@@ -14,10 +33,11 @@ body {
     flex-direction: column;
 }
 
+
 .chat-window {
-    flex: 1;
-    overflow: visible; /* let the page body scroll, not the inner panel */
     padding: 30px;
+    padding-bottom: 180px; /* space for the fixed input */
+    overflow-y: auto;
 }
 
 #emptyState {
@@ -27,11 +47,10 @@ body {
 }
 
 .quick-prompts {
-    display:flex;
-    gap:28px;
-    justify-content:center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
     margin-top: 26px;
-    flex-wrap:wrap;
 }
 
 .quick-prompts .prompt {
@@ -62,9 +81,14 @@ body {
 }
 
 .input-area {
-    display: block;
-    padding: 24px 36px;
-    border-top: 1px solid #f5f5f5;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 900px;
+    background: white;
+    z-index: 1000;
 }
 
 .input-wrapper {
@@ -76,7 +100,8 @@ body {
 
 .input-wrapper textarea {
     width: 100%;
-    min-height: 120px;
+    min-height: 48px;
+    max-height: 180px;
     resize: none; /* prevent manual resizing */
     border-radius: 14px;
     border: 1px solid #ececec;
@@ -141,8 +166,7 @@ body {
     max-width: 100%;
     box-shadow: none;
     /* internal scroll to keep bubble size stable */
-    max-height: 280px;
-    overflow: auto;
+    display: block;
     white-space: pre-wrap;
     word-break: break-word;
 }

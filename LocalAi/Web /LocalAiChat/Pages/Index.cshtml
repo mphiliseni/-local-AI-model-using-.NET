@@ -15,19 +15,27 @@
                 <h2>Chat is Empty</h2>
                 <p>AI assistant is ready to answer your questions.</p>
                 <div class="quick-prompts">
-                    <button class="prompt" onclick="sendPrompt('Tell me a joke')">
-                        <div class="prompt-title">Tell me a joke</div>
-                        <div class="prompt-desc">Take a break and enjoy a quick laugh</div>
-                    </button>
-                    <button class="prompt" onclick="sendPrompt('Summarize text')">
-                        <div class="prompt-title">Summarize text</div>
-                        <div class="prompt-desc">Extract a quick summary (main ideas)</div>
-                    </button>
-                    <button class="prompt" onclick="sendPrompt('Write an email')">
-                        <div class="prompt-title">Write an email</div>
-                        <div class="prompt-desc">Make your text look and sound professional</div>
-                    </button>
-                </div>
+
+                <button class="prompt" onclick="sendPrompt('Tell me a joke')">
+                    <div class="prompt-title">Tell me a joke</div>
+                    <div class="prompt-desc">Take a break and enjoy a quick laugh</div>
+                </button>
+
+                <button class="prompt" onclick="sendPrompt('Explain a programming concept')">
+                    <div class="prompt-title">Learn Coding</div>
+                    <div class="prompt-desc">Get simple explanations of coding concepts</div>
+                </button>
+
+                <button class="prompt" onclick="sendPrompt('Generate SQL query')">
+                    <div class="prompt-title">Generate SQL</div>
+                    <div class="prompt-desc">Create SQL queries from requirements</div>
+                </button>
+                <button class="prompt" onclick="sendPrompt('Review my code')">
+                    <div class="prompt-title">Code Review</div>
+                    <div class="prompt-desc">Identify bugs and improvement opportunities</div>
+                </button>
+
+            </div>
             </div>
         </div>
         
@@ -39,7 +47,7 @@
 
     <div class="input-area">
         <div class="input-wrapper">
-            <textarea id="messageBox" rows="4" placeholder="Ask AI Assistant..."></textarea>
+            <textarea id="messageBox" rows="1" placeholder="Ask AI Assistant..."></textarea>
             <button class="send-btn" onclick="sendMessage()">↗</button>
         </div>
     </div>

@@ -3,7 +3,7 @@ function getMessageBox() {
     return document.getElementById("messageBox");
 }
 
-function autoResizeTextarea(el, maxHeight = 400) {
+function autoResizeTextarea(el, maxHeight = 200) {
     if (!el) return;
     el.style.height = 'auto';
     const h = Math.min(el.scrollHeight, maxHeight);
