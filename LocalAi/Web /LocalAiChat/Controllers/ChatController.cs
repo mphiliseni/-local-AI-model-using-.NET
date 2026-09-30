@@ -47,11 +47,19 @@ namespace LocalAiChat.Controllers
                 await Response.Body.FlushAsync();
             }
 
-            // signal done
-            var done = "event: done\ndata: [DONE]\n\n";
+            
+            // signal done without sending visible text
+            var done = "event: done\n\n";
             var doneBytes = System.Text.Encoding.UTF8.GetBytes(done);
+
             await Response.Body.WriteAsync(doneBytes, 0, doneBytes.Length);
             await Response.Body.FlushAsync();
+
+            // signal done
+            // var done = "event: done\ndata: [DONE]\n\n";
+            // var doneBytes = System.Text.Encoding.UTF8.GetBytes(done);
+            // await Response.Body.WriteAsync(doneBytes, 0, doneBytes.Length);
+            // await Response.Body.FlushAsync();
         }
     }
 }
